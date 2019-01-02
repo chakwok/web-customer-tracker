@@ -60,5 +60,11 @@ public class CustomerController {
 		return "customer-form";
 	}
 	
+	@GetMapping("/remove")
+	public String removeUser(@RequestParam("customerId") int id, Model model) {
+		customerService.removeCustomer(id);
+		return listCustomers(model);
+	}
+	
 	
 }
